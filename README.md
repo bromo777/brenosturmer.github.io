@@ -1,3 +1,3 @@
-# Aqui estão algumas informações sobre mim!
+# Algumas informações sobre mim!
 
-Siga o link para acessar a página: https://bromo777.github.io/
+Acesse a página para saber mais: https://bromo777.github.io/
