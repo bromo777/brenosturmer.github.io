@@ -1,3 +1,3 @@
-# Algumas informações sobre mim!
+# Some informations about me!
 
-Acesse a página para saber mais: https://bromo777.github.io/
+Visit the page to learn more: https://bromo777.github.io/
