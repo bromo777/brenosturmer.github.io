@@ -1,104 +1,201 @@
+
+
+.perfil {
+  position: relative; /* Para posicionar o efeito de sombra */
+  display: inline-block; /* Para que a imagem se comporte como um bloco */
+  overflow: hidden; /* Para esconder partes da imagem que saem do contêiner */
+  border-radius: 50%; /* Faz a imagem ficar redonda */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+.imagem-perfil {
+  width: 150px; /* Defina a largura desejada */
+  height: 150px; /* A altura deve ser igual à largura */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 50%; /* Faz a imagem ficar redonda */
+  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+/* Efeito de hover */
+.perfil:hover .imagem-perfil {
+  transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+/* Adicionando um efeito de borda */
+.perfil::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.8); /* Borda branca com transparência */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+.perfil:hover::after {
+  opacity: 1; /* Torna a borda visível ao passar o mouse */
+}
+
+/* Reset básico */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+  line-height: 1.6;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* Estilo do cabeçalho */
+header {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+/* Navegação */
+nav {
+  margin-top: 15px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ffdd57;
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: #ffdd57;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Animação da linha embaixo do link */
+}
+
+/* Estilo do container */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.container:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Estilo das seções */
+h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ffdd57;
+  width: 50px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffdd57;
+}
+
+/* Estilo do rodapé */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #007bff;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #eee;
+  to {
+      opacity: 1;
   }
-  
-  header {
-    padding: 1.5rem 0;
-    text-align: center;
-  }
-  
-  header .logo {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-  
-  header .nav-link {
-    color: #3b334e;
-    border-radius: 4px;
-    display: inline-block;
-    margin: 0.5rem 0.25rem;
-    padding: 0.625rem 1.125rem;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-  
-  header .nav-link:hover {
-    background-color: #e2d7ff;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem;
-  }
-  
-  h2 {
-    font-size: 1.25rem;
-    margin: 1rem 0 0.5rem;
-  }
-  
-  p {
-    line-height: 1.5;
-  }
-  
-  a {
-    color: #3b334e;
-    text-decoration: none;
-  }
-  
-  ul li {
-    margin-bottom: 0.5rem;
-    margin-left: 2.5rem;
-  }
-  
-  .container {
-    min-height: calc(100vh - 252px);
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  section {
-    margin-bottom: 1rem;
-  }
-  
-  .call-to-action {
-    background-color: #3b334e;
-    border: 0;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0.5rem 0.25rem;
-    padding: 0.625rem 1.125rem;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-  
-  .call-to-action:hover {
-    background-color: #4e4368;
-  }
-  
-  .skills {
-    margin-top: 1.5rem;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background-color: #3b334e;
-    color: #fff;
-  }
-  
+}
+
+.container {
+  animation: fadeIn 0.5s ease-in; /* Animação de fade-in para o container */
+}
+
+
