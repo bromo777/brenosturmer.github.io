@@ -1,28 +1,28 @@
 
 
 .perfil {
-  position: relative; /* Para posicionar o efeito de sombra */
-  display: inline-block; /* Para que a imagem se comporte como um bloco */
-  overflow: hidden; /* Para esconder partes da imagem que saem do contêiner */
-  border-radius: 50%; /* Faz a imagem ficar redonda */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+  position: relative; 
+  display: inline-block; 
+  overflow: hidden; 
+  border-radius: 50%; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease; 
 }
 
 .imagem-perfil {
-  width: 150px; /* Defina a largura desejada */
-  height: 150px; /* A altura deve ser igual à largura */
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 50%; /* Faz a imagem ficar redonda */
-  transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 50%; 
+  transition: transform 0.3s ease; 
 }
 
-/* Efeito de hover */
+
 .perfil:hover .imagem-perfil {
-  transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+  transform: scale(1.1); 
 }
 
-/* Adicionando um efeito de borda */
+
 .perfil::after {
   content: '';
   position: absolute;
@@ -31,16 +31,16 @@
   right: 0;
   bottom: 0;
   border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.8); /* Borda branca com transparência */
-  opacity: 0; /* Inicialmente invisível */
-  transition: opacity 0.3s ease; /* Transição suave para o efeito de hover */
+  border: 5px solid rgba(255, 255, 255, 0.8); 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
 }
 
 .perfil:hover::after {
-  opacity: 1; /* Torna a borda visível ao passar o mouse */
+  opacity: 1; 
 }
 
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +57,7 @@ body {
   color: #333;
 }
 
-/* Estilo do cabeçalho */
+
 header {
   background: linear-gradient(135deg, #007bff, #00c6ff);
   color: #fff;
@@ -78,7 +78,7 @@ header {
   margin-top: 5px;
 }
 
-/* Navegação */
+
 nav {
   margin-top: 15px;
 }
@@ -110,10 +110,10 @@ nav {
 }
 
 .nav-link:hover::after {
-  width: 100%; /* Animação da linha embaixo do link */
+  width: 100%; 
 }
 
-/* Estilo do container */
+
 .container {
   max-width: 800px;
   margin: 20px auto;
@@ -125,10 +125,10 @@ nav {
 }
 
 .container:hover {
-  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+  transform: translateY(-5px); 
 }
 
-/* Estilo das seções */
+
 h1 {
   color: #007bff;
   margin-bottom: 20px;
@@ -172,7 +172,7 @@ a:hover {
   color: #ffdd57;
 }
 
-/* Estilo do rodapé */
+
 footer {
   text-align: center;
   padding: 10px 0;
@@ -184,7 +184,7 @@ footer {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeitos de animação */
+
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -195,7 +195,7 @@ footer {
 }
 
 .container {
-  animation: fadeIn 0.5s ease-in; /* Animação de fade-in para o container */
+  animation: fadeIn 0.5s ease-in; 
 }
 
 
